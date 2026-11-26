@@ -1,0 +1,64 @@
+{
+  "dataset": "imdb",
+  "source": "https://huggingface.co/datasets/stanfordnlp/imdb",
+  "dataset_id": "stanfordnlp/imdb",
+  "task": "binary_sentiment_classification",
+  "label_column": "label",
+  "source_split_sizes": {
+    "train": 25000,
+    "test": 25000,
+    "unsupervised": 50000
+  },
+  "source_size": 100000,
+  "valid_rows_after_cleaning": 98463,
+  "labeled_rows": 49578,
+  "missing_values_by_source_split": {
+    "train": {},
+    "test": {},
+    "unsupervised": {}
+  },
+  "duplicate_text_rows_before_dedup": 1537,
+  "duplicate_rows_removed": 1537,
+  "duplicate_text_label_conflicts": 620,
+  "invalid_records": {
+    "missing_or_blank_text": 0,
+    "non_string_text": 0,
+    "invalid_or_missing_label": 0,
+    "duplicate_rows_removed": 1537,
+    "duplicate_text_label_conflicts": 620
+  },
+  "class_distribution_by_split": {
+    "train": {
+      "negative": 11095,
+      "positive": 11195
+    },
+    "validation": {
+      "negative": 1241,
+      "positive": 1248
+    },
+    "test": {
+      "negative": 12360,
+      "positive": 12439
+    },
+    "unlabeled": {
+      "unlabeled": 48885
+    }
+  },
+  "split_sizes": {
+    "train": 22290,
+    "validation": 2489,
+    "test": 24799,
+    "unlabeled": 48885
+  },
+  "text_length_characters": {
+    "scope": "all retained records, including unlabeled rows",
+    "count": 98463,
+    "min": 32,
+    "mean": 1298.66,
+    "median": 962.0,
+    "p95": 3378.0,
+    "max": 14106
+  },
+  "split_method": "official test preserved; stratified train/validation split (validation=10%, seed=42); cross-split duplicate text removed preferring test then validation then train",
+  "seed": 42
+}

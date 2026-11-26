@@ -1,0 +1,288 @@
+{
+  "seed": 42,
+  "available_datasets": [
+    "imdb",
+    "tweet_eval",
+    "go_emotions"
+  ],
+  "unavailable_datasets": {
+    "semeval_absa": "unavailable",
+    "sarc": "unavailable",
+    "amazon_reviews": "unavailable"
+  },
+  "datasets": {
+    "imdb": {
+      "dataset": "imdb",
+      "source": "https://huggingface.co/datasets/stanfordnlp/imdb",
+      "dataset_id": "stanfordnlp/imdb",
+      "task": "binary_sentiment_classification",
+      "label_column": "label",
+      "source_split_sizes": {
+        "train": 25000,
+        "test": 25000,
+        "unsupervised": 50000
+      },
+      "source_size": 100000,
+      "valid_rows_after_cleaning": 98463,
+      "labeled_rows": 49578,
+      "missing_values_by_source_split": {
+        "train": {},
+        "test": {},
+        "unsupervised": {}
+      },
+      "duplicate_text_rows_before_dedup": 1537,
+      "duplicate_rows_removed": 1537,
+      "duplicate_text_label_conflicts": 620,
+      "invalid_records": {
+        "missing_or_blank_text": 0,
+        "non_string_text": 0,
+        "invalid_or_missing_label": 0,
+        "duplicate_rows_removed": 1537,
+        "duplicate_text_label_conflicts": 620
+      },
+      "class_distribution_by_split": {
+        "train": {
+          "negative": 11095,
+          "positive": 11195
+        },
+        "validation": {
+          "negative": 1241,
+          "positive": 1248
+        },
+        "test": {
+          "negative": 12360,
+          "positive": 12439
+        },
+        "unlabeled": {
+          "unlabeled": 48885
+        }
+      },
+      "split_sizes": {
+        "train": 22290,
+        "validation": 2489,
+        "test": 24799,
+        "unlabeled": 48885
+      },
+      "text_length_characters": {
+        "scope": "all retained records, including unlabeled rows",
+        "count": 98463,
+        "min": 32,
+        "mean": 1298.66,
+        "median": 962.0,
+        "p95": 3378.0,
+        "max": 14106
+      },
+      "split_method": "official test preserved; stratified train/validation split (validation=10%, seed=42); cross-split duplicate text removed preferring test then validation then train",
+      "seed": 42
+    },
+    "tweet_eval": {
+      "dataset": "tweet_eval",
+      "source": "https://huggingface.co/datasets/cardiffnlp/tweet_eval",
+      "dataset_id": "cardiffnlp/tweet_eval",
+      "task": "three_class_sentiment_classification",
+      "label_column": "label",
+      "source_split_sizes": {
+        "train": 45615,
+        "validation": 2000,
+        "test": 12284
+      },
+      "source_size": 59899,
+      "valid_rows_after_cleaning": 59865,
+      "labeled_rows": 59865,
+      "missing_values_by_source_split": {
+        "train": {},
+        "validation": {},
+        "test": {}
+      },
+      "duplicate_text_rows_before_dedup": 34,
+      "duplicate_rows_removed": 34,
+      "duplicate_text_label_conflicts": 6,
+      "invalid_records": {
+        "missing_or_blank_text": 0,
+        "non_string_text": 0,
+        "invalid_or_missing_label": 0,
+        "duplicate_rows_removed": 34,
+        "duplicate_text_label_conflicts": 6
+      },
+      "class_distribution_by_split": {
+        "train": {
+          "negative": 7091,
+          "neutral": 20655,
+          "positive": 17839
+        },
+        "validation": {
+          "negative": 312,
+          "neutral": 869,
+          "positive": 819
+        },
+        "test": {
+          "negative": 3971,
+          "neutral": 5934,
+          "positive": 2375
+        }
+      },
+      "split_sizes": {
+        "train": 45585,
+        "validation": 2000,
+        "test": 12280,
+        "unlabeled": 0
+      },
+      "text_length_characters": {
+        "scope": "all retained records, including unlabeled rows",
+        "count": 59865,
+        "min": 6,
+        "mean": 103.38,
+        "median": 109.0,
+        "p95": 140.0,
+        "max": 200
+      },
+      "split_method": "official source splits preserved; exact normalized text duplicates removed across splits, preferring test then validation then train",
+      "seed": 42
+    },
+    "go_emotions": {
+      "dataset": "go_emotions",
+      "source": "https://huggingface.co/datasets/google-research-datasets/go_emotions",
+      "dataset_id": "google-research-datasets/go_emotions",
+      "task": "multi_label_emotion_classification",
+      "label_column": "label",
+      "source_split_sizes": {
+        "train": 43410,
+        "validation": 5426,
+        "test": 5427
+      },
+      "source_size": 54263,
+      "valid_rows_after_cleaning": 53943,
+      "labeled_rows": 53943,
+      "missing_values_by_source_split": {
+        "train": {},
+        "validation": {},
+        "test": {}
+      },
+      "duplicate_text_rows_before_dedup": 320,
+      "duplicate_rows_removed": 320,
+      "duplicate_text_label_conflicts": 81,
+      "invalid_records": {
+        "missing_or_blank_text": 0,
+        "non_string_text": 0,
+        "invalid_or_missing_label": 0,
+        "duplicate_rows_removed": 320,
+        "duplicate_text_label_conflicts": 81
+      },
+      "class_distribution_by_split": {
+        "train": {
+          "admiration": 4107,
+          "amusement": 2322,
+          "anger": 1562,
+          "annoyance": 2462,
+          "approval": 2930,
+          "caring": 1079,
+          "confusion": 1361,
+          "curiosity": 2183,
+          "desire": 641,
+          "disappointment": 1264,
+          "disapproval": 2018,
+          "disgust": 790,
+          "embarrassment": 302,
+          "excitement": 837,
+          "fear": 592,
+          "gratitude": 2590,
+          "grief": 77,
+          "joy": 1432,
+          "love": 2049,
+          "nervousness": 164,
+          "neutral": 14153,
+          "optimism": 1573,
+          "pride": 110,
+          "realization": 1107,
+          "relief": 153,
+          "remorse": 543,
+          "sadness": 1318,
+          "surprise": 1055
+        },
+        "validation": {
+          "admiration": 487,
+          "amusement": 303,
+          "anger": 195,
+          "annoyance": 303,
+          "approval": 396,
+          "caring": 152,
+          "confusion": 151,
+          "curiosity": 247,
+          "desire": 77,
+          "disappointment": 163,
+          "disapproval": 292,
+          "disgust": 97,
+          "embarrassment": 35,
+          "excitement": 95,
+          "fear": 90,
+          "gratitude": 351,
+          "grief": 13,
+          "joy": 172,
+          "love": 250,
+          "nervousness": 21,
+          "neutral": 1765,
+          "optimism": 209,
+          "pride": 15,
+          "realization": 127,
+          "relief": 18,
+          "remorse": 68,
+          "sadness": 143,
+          "surprise": 129
+        },
+        "test": {
+          "admiration": 504,
+          "amusement": 264,
+          "anger": 198,
+          "annoyance": 320,
+          "approval": 351,
+          "caring": 134,
+          "confusion": 153,
+          "curiosity": 284,
+          "desire": 83,
+          "disappointment": 151,
+          "disapproval": 267,
+          "disgust": 123,
+          "embarrassment": 37,
+          "excitement": 102,
+          "fear": 78,
+          "gratitude": 351,
+          "grief": 6,
+          "joy": 160,
+          "love": 237,
+          "nervousness": 23,
+          "neutral": 1786,
+          "optimism": 186,
+          "pride": 16,
+          "realization": 145,
+          "relief": 11,
+          "remorse": 56,
+          "sadness": 156,
+          "surprise": 141
+        }
+      },
+      "split_sizes": {
+        "train": 43112,
+        "validation": 5410,
+        "test": 5421,
+        "unlabeled": 0
+      },
+      "text_length_characters": {
+        "scope": "all retained records, including unlabeled rows",
+        "count": 53943,
+        "min": 1,
+        "mean": 68.58,
+        "median": 65.0,
+        "p95": 131.0,
+        "max": 703
+      },
+      "split_method": "official source splits preserved; exact normalized text duplicates removed across splits, preferring test then validation then train",
+      "seed": 42
+    }
+  },
+  "notes": [
+    "Dataset tasks and target vocabularies remain separate.",
+    "GoEmotions targets are multi-label emotion names; sentiment labels are not inferred.",
+    "URLs become <URL>; hashtags, mentions, contractions, negation, punctuation, emoji, and case are retained.",
+    "Unlabeled IMDb rows are written separately and excluded from supervised class distributions."
+  ]
+}

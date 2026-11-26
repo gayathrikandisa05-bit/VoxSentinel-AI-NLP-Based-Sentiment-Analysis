@@ -1,0 +1,343 @@
+{
+  "dataset": "tweet_eval",
+  "task": "sentiment_classification",
+  "model_version": "tfidf-linear-baseline-v1",
+  "scikit_learn_version": "1.9.1",
+  "seed": 42,
+  "classes": [
+    "negative",
+    "neutral",
+    "positive"
+  ],
+  "split_sizes": {
+    "train": 45585,
+    "validation": 2000,
+    "test": 12280
+  },
+  "selection_metric": "validation.f1_macro",
+  "models": {
+    "logistic_regression": {
+      "parameters": {
+        "tfidf": {
+          "max_features": 50000,
+          "ngram_range": [
+            1,
+            2
+          ],
+          "sublinear_tf": true,
+          "lowercase": true,
+          "token_pattern": "(?u)<url>|[@#]?\\w+(?:['’]\\w+)*|[^\\w\\s]"
+        },
+        "classifier": {
+          "C": 1.0,
+          "class_weight": null,
+          "dual": false,
+          "fit_intercept": true,
+          "intercept_scaling": 1,
+          "l1_ratio": 0.0,
+          "max_iter": 1000,
+          "n_jobs": null,
+          "penalty": "deprecated",
+          "random_state": 42,
+          "solver": "lbfgs",
+          "tol": 0.0001,
+          "verbose": 0,
+          "warm_start": false
+        }
+      },
+      "fit_seconds": 3.0406761249978445,
+      "artifact_path": "artifacts/models/tweet_eval_logistic_regression.joblib",
+      "artifact_size_bytes": 1104237,
+      "validation": {
+        "accuracy": 0.691,
+        "precision_macro": 0.6880072799529806,
+        "recall_macro": 0.6281572974610948,
+        "f1_macro": 0.6449517793955608,
+        "f1_weighted": 0.6846963715253371,
+        "labels": [
+          "negative",
+          "neutral",
+          "positive"
+        ],
+        "classification_report": {
+          "negative": {
+            "precision": 0.6612903225806451,
+            "recall": 0.3942307692307692,
+            "f1-score": 0.4939759036144578,
+            "support": 312.0
+          },
+          "neutral": {
+            "precision": 0.6482558139534884,
+            "recall": 0.7698504027617952,
+            "f1-score": 0.7038400841662283,
+            "support": 869.0
+          },
+          "positive": {
+            "precision": 0.7544757033248082,
+            "recall": 0.7203907203907204,
+            "f1-score": 0.7370393504059962,
+            "support": 819.0
+          },
+          "accuracy": 0.691,
+          "macro avg": {
+            "precision": 0.6880072799529806,
+            "recall": 0.6281572974610948,
+            "f1-score": 0.6449517793955608,
+            "support": 2000.0
+          },
+          "weighted avg": {
+            "precision": 0.6937862419968803,
+            "recall": 0.691,
+            "f1-score": 0.6846963715253371,
+            "support": 2000.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            123,
+            157,
+            32
+          ],
+          [
+            40,
+            669,
+            160
+          ],
+          [
+            23,
+            206,
+            590
+          ]
+        ]
+      },
+      "test": {
+        "accuracy": 0.5934039087947883,
+        "precision_macro": 0.6063259057245659,
+        "recall_macro": 0.5691733321835527,
+        "f1_macro": 0.5568707767469028,
+        "f1_weighted": 0.5728082658376952,
+        "labels": [
+          "negative",
+          "neutral",
+          "positive"
+        ],
+        "classification_report": {
+          "negative": {
+            "precision": 0.6969522714203565,
+            "recall": 0.3052127927474188,
+            "f1-score": 0.4245183887915937,
+            "support": 3971.0
+          },
+          "neutral": {
+            "precision": 0.5942085443448902,
+            "recall": 0.771149309066397,
+            "f1-score": 0.6712137880454712,
+            "support": 5934.0
+          },
+          "positive": {
+            "precision": 0.5278169014084507,
+            "recall": 0.6311578947368421,
+            "f1-score": 0.5748801534036433,
+            "support": 2375.0
+          },
+          "accuracy": 0.5934039087947883,
+          "macro avg": {
+            "precision": 0.6063259057245659,
+            "recall": 0.5691733321835527,
+            "f1-score": 0.5568707767469028,
+            "support": 12280.0
+          },
+          "weighted avg": {
+            "precision": 0.614592517328818,
+            "recall": 0.5934039087947883,
+            "f1-score": 0.5728082658376952,
+            "support": 12280.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            1212,
+            2319,
+            440
+          ],
+          [
+            457,
+            4576,
+            901
+          ],
+          [
+            70,
+            806,
+            1499
+          ]
+        ]
+      },
+      "test_inference_seconds": 0.11321250000037253,
+      "test_inference_records_per_second": 108468.58783225874
+    },
+    "linear_svm": {
+      "parameters": {
+        "tfidf": {
+          "max_features": 50000,
+          "ngram_range": [
+            1,
+            2
+          ],
+          "sublinear_tf": true,
+          "lowercase": true,
+          "token_pattern": "(?u)<url>|[@#]?\\w+(?:['’]\\w+)*|[^\\w\\s]"
+        },
+        "classifier": {
+          "C": 1.0,
+          "class_weight": null,
+          "dual": "auto",
+          "fit_intercept": true,
+          "intercept_scaling": 1,
+          "loss": "squared_hinge",
+          "max_iter": 1000,
+          "multi_class": "ovr",
+          "penalty": "l2",
+          "random_state": 42,
+          "tol": 0.0001,
+          "verbose": 0
+        }
+      },
+      "fit_seconds": 1.5941494590006187,
+      "artifact_path": "artifacts/models/tweet_eval_linear_svm.joblib",
+      "artifact_size_bytes": 1695353,
+      "validation": {
+        "accuracy": 0.683,
+        "precision_macro": 0.6656255676281796,
+        "recall_macro": 0.6438865283801993,
+        "f1_macro": 0.6527022612758615,
+        "f1_weighted": 0.6813708414501657,
+        "labels": [
+          "negative",
+          "neutral",
+          "positive"
+        ],
+        "classification_report": {
+          "negative": {
+            "precision": 0.5984555984555985,
+            "recall": 0.4967948717948718,
+            "f1-score": 0.542907180385289,
+            "support": 312.0
+          },
+          "neutral": {
+            "precision": 0.6578669482576558,
+            "recall": 0.716915995397008,
+            "f1-score": 0.6861233480176211,
+            "support": 869.0
+          },
+          "positive": {
+            "precision": 0.7405541561712846,
+            "recall": 0.717948717948718,
+            "f1-score": 0.7290762554246745,
+            "support": 819.0
+          },
+          "accuracy": 0.683,
+          "macro avg": {
+            "precision": 0.6656255676281796,
+            "recall": 0.6438865283801993,
+            "f1-score": 0.6527022612758615,
+            "support": 2000.0
+          },
+          "weighted avg": {
+            "precision": 0.6824591893291658,
+            "recall": 0.683,
+            "f1-score": 0.6813708414501657,
+            "support": 2000.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            155,
+            123,
+            34
+          ],
+          [
+            74,
+            623,
+            172
+          ],
+          [
+            30,
+            201,
+            588
+          ]
+        ]
+      },
+      "test": {
+        "accuracy": 0.5842833876221498,
+        "precision_macro": 0.5776080300334303,
+        "recall_macro": 0.5817533878285246,
+        "f1_macro": 0.569824520025921,
+        "f1_weighted": 0.5807972964809698,
+        "labels": [
+          "negative",
+          "neutral",
+          "positive"
+        ],
+        "classification_report": {
+          "negative": {
+            "precision": 0.6309480566654558,
+            "recall": 0.43742130445731553,
+            "f1-score": 0.516656751933373,
+            "support": 3971.0
+          },
+          "neutral": {
+            "precision": 0.6094999216178084,
+            "recall": 0.6552072800808898,
+            "f1-score": 0.6315276536993422,
+            "support": 5934.0
+          },
+          "positive": {
+            "precision": 0.4923761118170267,
+            "recall": 0.6526315789473685,
+            "f1-score": 0.561289154445048,
+            "support": 2375.0
+          },
+          "accuracy": 0.5842833876221498,
+          "macro avg": {
+            "precision": 0.5776080300334303,
+            "recall": 0.5817533878285246,
+            "f1-score": 0.569824520025921,
+            "support": 12280.0
+          },
+          "weighted avg": {
+            "precision": 0.5937834310638468,
+            "recall": 0.5842833876221498,
+            "f1-score": 0.5807972964809698,
+            "support": 12280.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            1737,
+            1786,
+            448
+          ],
+          [
+            896,
+            3888,
+            1150
+          ],
+          [
+            120,
+            705,
+            1550
+          ]
+        ]
+      },
+      "test_inference_seconds": 0.11471679199894425,
+      "test_inference_records_per_second": 107046.22911799185
+    }
+  },
+  "selected_model_by_validation_macro_f1": "linear_svm",
+  "limitations": [
+    "TF-IDF and linear classifiers are lexical baselines; they do not model word order beyond unigrams and bigrams.",
+    "The vectorizer lowercases text; it does not preserve casing as a feature.",
+    "Reported confidence is not calibrated; LinearSVC does not provide class probabilities.",
+    "IMDb and TweetEval use different source domains and label taxonomies; scores are not directly comparable across datasets."
+  ]
+}

@@ -1,0 +1,286 @@
+{
+  "dataset": "imdb",
+  "task": "sentiment_classification",
+  "model_version": "tfidf-linear-baseline-v1",
+  "scikit_learn_version": "1.9.1",
+  "seed": 42,
+  "classes": [
+    "negative",
+    "positive"
+  ],
+  "split_sizes": {
+    "train": 22290,
+    "validation": 2489,
+    "test": 24799
+  },
+  "selection_metric": "validation.f1_macro",
+  "models": {
+    "logistic_regression": {
+      "parameters": {
+        "tfidf": {
+          "max_features": 50000,
+          "ngram_range": [
+            1,
+            2
+          ],
+          "sublinear_tf": true,
+          "lowercase": true,
+          "token_pattern": "(?u)<url>|[@#]?\\w+(?:['’]\\w+)*|[^\\w\\s]"
+        },
+        "classifier": {
+          "C": 1.0,
+          "class_weight": null,
+          "dual": false,
+          "fit_intercept": true,
+          "intercept_scaling": 1,
+          "l1_ratio": 0.0,
+          "max_iter": 1000,
+          "n_jobs": null,
+          "penalty": "deprecated",
+          "random_state": 42,
+          "solver": "lbfgs",
+          "tol": 0.0001,
+          "verbose": 0,
+          "warm_start": false
+        }
+      },
+      "fit_seconds": 5.192225333001261,
+      "artifact_path": "artifacts/models/imdb_logistic_regression.joblib",
+      "artifact_size_bytes": 763559,
+      "validation": {
+        "accuracy": 0.8931297709923665,
+        "precision_macro": 0.8931419457735248,
+        "recall_macro": 0.8931221461187215,
+        "f1_macro": 0.8931268555430292,
+        "f1_weighted": 0.8931284254003646,
+        "labels": [
+          "negative",
+          "positive"
+        ],
+        "classification_report": {
+          "negative": {
+            "precision": 0.8947368421052632,
+            "recall": 0.8904109589041096,
+            "f1-score": 0.8925686591276252,
+            "support": 1241.0
+          },
+          "positive": {
+            "precision": 0.8915470494417863,
+            "recall": 0.8958333333333334,
+            "f1-score": 0.8936850519584333,
+            "support": 1248.0
+          },
+          "accuracy": 0.8931297709923665,
+          "macro avg": {
+            "precision": 0.8931419457735248,
+            "recall": 0.8931221461187215,
+            "f1-score": 0.8931268555430292,
+            "support": 2489.0
+          },
+          "weighted avg": {
+            "precision": 0.8931374603278348,
+            "recall": 0.8931297709923665,
+            "f1-score": 0.8931284254003646,
+            "support": 2489.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            1105,
+            136
+          ],
+          [
+            130,
+            1118
+          ]
+        ]
+      },
+      "test": {
+        "accuracy": 0.901729908464051,
+        "precision_macro": 0.9018226031363761,
+        "recall_macro": 0.9017064309428717,
+        "f1_macro": 0.9017195982894751,
+        "f1_weighted": 0.9017228049973156,
+        "labels": [
+          "negative",
+          "positive"
+        ],
+        "classification_report": {
+          "negative": {
+            "precision": 0.9071809601969635,
+            "recall": 0.894336569579288,
+            "f1-score": 0.9007129761662253,
+            "support": 12360.0
+          },
+          "positive": {
+            "precision": 0.8964642460757888,
+            "recall": 0.9090762923064555,
+            "f1-score": 0.902726220412725,
+            "support": 12439.0
+          },
+          "accuracy": 0.901729908464051,
+          "macro avg": {
+            "precision": 0.9018226031363761,
+            "recall": 0.9017064309428717,
+            "f1-score": 0.9017195982894751,
+            "support": 24799.0
+          },
+          "weighted avg": {
+            "precision": 0.9018055334880926,
+            "recall": 0.901729908464051,
+            "f1-score": 0.9017228049973156,
+            "support": 24799.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            11054,
+            1306
+          ],
+          [
+            1131,
+            11308
+          ]
+        ]
+      },
+      "test_inference_seconds": 3.0772749579991796,
+      "test_inference_records_per_second": 8058.753390085141
+    },
+    "linear_svm": {
+      "parameters": {
+        "tfidf": {
+          "max_features": 50000,
+          "ngram_range": [
+            1,
+            2
+          ],
+          "sublinear_tf": true,
+          "lowercase": true,
+          "token_pattern": "(?u)<url>|[@#]?\\w+(?:['’]\\w+)*|[^\\w\\s]"
+        },
+        "classifier": {
+          "C": 1.0,
+          "class_weight": null,
+          "dual": "auto",
+          "fit_intercept": true,
+          "intercept_scaling": 1,
+          "loss": "squared_hinge",
+          "max_iter": 1000,
+          "multi_class": "ovr",
+          "penalty": "l2",
+          "random_state": 42,
+          "tol": 0.0001,
+          "verbose": 0
+        }
+      },
+      "fit_seconds": 5.472473624999111,
+      "artifact_path": "artifacts/models/imdb_linear_svm.joblib",
+      "artifact_size_bytes": 960875,
+      "validation": {
+        "accuracy": 0.9011651265568501,
+        "precision_macro": 0.901197082780683,
+        "recall_macro": 0.9011530455174694,
+        "f1_macro": 0.9011605157331144,
+        "f1_weighted": 0.9011624143075939,
+        "labels": [
+          "negative",
+          "positive"
+        ],
+        "classification_report": {
+          "negative": {
+            "precision": 0.9041429731925265,
+            "recall": 0.8968573730862208,
+            "f1-score": 0.9004854368932039,
+            "support": 1241.0
+          },
+          "positive": {
+            "precision": 0.8982511923688394,
+            "recall": 0.905448717948718,
+            "f1-score": 0.9018355945730248,
+            "support": 1248.0
+          },
+          "accuracy": 0.9011651265568501,
+          "macro avg": {
+            "precision": 0.901197082780683,
+            "recall": 0.9011530455174694,
+            "f1-score": 0.9011605157331144,
+            "support": 2489.0
+          },
+          "weighted avg": {
+            "precision": 0.9011887978337633,
+            "recall": 0.9011651265568501,
+            "f1-score": 0.9011624143075939,
+            "support": 2489.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            1113,
+            128
+          ],
+          [
+            118,
+            1130
+          ]
+        ]
+      },
+      "test": {
+        "accuracy": 0.9006814790918989,
+        "precision_macro": 0.9006800690545984,
+        "recall_macro": 0.9006834257324612,
+        "f1_macro": 0.9006809726377016,
+        "f1_weighted": 0.9006816870998727,
+        "labels": [
+          "negative",
+          "positive"
+        ],
+        "classification_report": {
+          "negative": {
+            "precision": 0.8996204473875474,
+            "recall": 0.901294498381877,
+            "f1-score": 0.9004566948227781,
+            "support": 12360.0
+          },
+          "positive": {
+            "precision": 0.9017396907216495,
+            "recall": 0.9000723530830452,
+            "f1-score": 0.9009052504526253,
+            "support": 12439.0
+          },
+          "accuracy": 0.9006814790918989,
+          "macro avg": {
+            "precision": 0.9006800690545984,
+            "recall": 0.9006834257324612,
+            "f1-score": 0.9006809726377016,
+            "support": 24799.0
+          },
+          "weighted avg": {
+            "precision": 0.9006834445984389,
+            "recall": 0.9006814790918989,
+            "f1-score": 0.9006816870998727,
+            "support": 24799.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            11140,
+            1220
+          ],
+          [
+            1243,
+            11196
+          ]
+        ]
+      },
+      "test_inference_seconds": 3.023134957998991,
+      "test_inference_records_per_second": 8203.074075268682
+    }
+  },
+  "selected_model_by_validation_macro_f1": "linear_svm",
+  "limitations": [
+    "TF-IDF and linear classifiers are lexical baselines; they do not model word order beyond unigrams and bigrams.",
+    "The vectorizer lowercases text; it does not preserve casing as a feature.",
+    "Reported confidence is not calibrated; LinearSVC does not provide class probabilities.",
+    "IMDb and TweetEval use different source domains and label taxonomies; scores are not directly comparable across datasets."
+  ]
+}
